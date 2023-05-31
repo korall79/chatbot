@@ -1,68 +1,74 @@
 package io.proj3ct.bot.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.sql.Timestamp;
 
 @Entity(name = "usersDataTable")
 public class User {
+
     @Id
-    private  Long ChatId;
+    private  Long chatid;
+    //@Column(name = "firstname")
+    private String firstname;
+   // @Column(name = "lastname")
+    private String lastname;
+   // @Column(name = "username")
+    private String username;
+   // @Column(name = "registeredat")
+    private Timestamp registeredat;
 
-    private String firstName;
-
-    private String lastName;
-    private String userName;
-    private Timestamp registeredAt;
-
-    public Long getChatId() {
-        return ChatId;
+    public Long getChatid() {
+        return chatid;
     }
 
-    public void setChatId(Long chatId) {
-        ChatId = chatId;
+    public void setChatid(Long chatid) {
+        this.chatid = chatid;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public Timestamp getRegisteredAt() {
-        return registeredAt;
+    public Timestamp getRegisteredat() {
+        return registeredat;
     }
 
-    public void setRegisteredAt(Timestamp registeredAt) {
-        this.registeredAt = registeredAt;
+    public void setRegisteredat(Timestamp registeredat) {
+        this.registeredat = registeredat;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "ChatId=" + ChatId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", registeredAt=" + registeredAt +
+                "ChatId=" + chatid +
+                ", firstName='" + firstname + '\'' +
+                ", lastName='" + lastname + '\'' +
+                ", userName='" + username + '\'' +
+                ", registeredAt=" + registeredat +
                 '}';
     }
 }
